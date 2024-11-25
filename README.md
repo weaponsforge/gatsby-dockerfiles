@@ -54,7 +54,7 @@ Run the Gatsby CLI in Docker. For example, to run the **Gatsby CLI v4** [API com
 
    ```yaml
    services:
-     gatsby-cli-v4:
+     gatsby-app:
        image: weaponsforge/gatsby-cli-v4-16x
        working_dir: /app
        volumes:

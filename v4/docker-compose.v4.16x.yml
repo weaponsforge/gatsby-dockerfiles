@@ -1,7 +1,7 @@
 services:
   gatsby-cli-v4-16x:
-    container_name: gatsby-cli-v4-16x
-    image: weaponsforge/gatsby-cli-v4:v16
+    container_name: gatsby-cli-v4-node16
+    image: weaponsforge/gatsby-cli:v4-node16
     build:
       dockerfile: Dockerfile.v4.buster.16x
       target: base

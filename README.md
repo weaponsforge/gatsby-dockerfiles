@@ -24,12 +24,12 @@ Here are some known Gatsby CLI versions and their compatible Node versions.
 
 3. Use the Dockerfiles inside the **/v2**, **/v3**, **/v4**, or **/v5** directories for reference to build a target Gatsby CLI Docker image.
 
-   | Folder | Description |
-   | :---: | --- |
-   | /v5 | Dockerfiles and compose files for Gatsby CLI v5 |
-   | /v4 | Dockerfiles and compose files for Gatsby CLI v4 |
-   | /v3 | Dockerfiles and compose files for Gatsby CLI v3 |
-   | /v2 | Dockerfiles and compose files for Gatsby CLI v2 |
+   | Folder | Contents | Image | Image Tag |
+   | :---: | --- | :---: | :---: |
+   | **/v5** | Dockerfiles and compose files for **`Gatsby CLI v5`**<br><sub>docker-compose.v5.20x.yml - CLI for Node 20.x<br>docker-compose.v5.18x.yml - CLI for Node 18.x</sub> | gatsby-cli | v5-node20<br>v5-node18 |
+   | **/v4** | Dockerfiles and compose files for **`Gatsby CLI v4`**<br><sub>docker-compose.v4.18x.yml - CLI for Node 18.x<br>docker-compose.v4.16x.yml - CLI for Node 16.x</sub> | gatsby-cli | v4-node18<br>v4-node16 |
+   | **/v3** | Dockerfiles and compose files for **`Gatsby CLI v3`**<br><sub>docker-compose.v3.14x.yml - CLI for Node 14.x | gatsby-cli | v3-node14 |
+   | **/v2** | Dockerfiles and compose files for **`Gatsby CLI v2`**<br><sub>docker-compose.v2.yml - CLI for Node 12.x | gatsby-cli | v2-node12 |
 
 4. Build a Gatsby CLI image. For example, to build the **Gatsby CLI v4** image, navigate first to the **/v4** directory, then run:
    ```bash

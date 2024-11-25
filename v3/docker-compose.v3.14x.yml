@@ -1,7 +1,7 @@
 services:
   gatsby-cli-v3:
-    container_name: gatsby-cli-v3-14x
-    image: weaponsforge/gatsby-cli-v3:v14
+    container_name: gatsby-cli-v3-node14
+    image: weaponsforge/gatsby-cli:v3-node14
     build:
       dockerfile: Dockerfile.v3
       target: base

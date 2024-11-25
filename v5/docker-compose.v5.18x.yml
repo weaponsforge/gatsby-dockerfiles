@@ -1,7 +1,7 @@
 services:
   gatsby-cli-v5-18x:
-    container_name: gatsby-cli-v5-18x
-    image: weaponsforge/gatsby-cli-v5:v18
+    container_name: gatsby-cli-v5-node18
+    image: weaponsforge/gatsby-cli:v5-node18
     build:
       dockerfile: Dockerfile.v5.18x
       target: base

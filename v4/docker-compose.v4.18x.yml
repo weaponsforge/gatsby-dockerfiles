@@ -1,9 +1,9 @@
 services:
   gatsby-cli-v4-18x:
-    container_name: gatsby-cli-v4-18x
-    image: weaponsforge/gatsby-cli-v4-18x:v18
+    container_name: gatsby-cli-v4-node18
+    image: weaponsforge/gatsby-cli:v4-node18
     build:
-      dockerfile: Dockerfile.v4.slim # Also try Dockerfile.v4.buster for complete image
+      dockerfile: Dockerfile.v4.buster # Also try Dockerfile.v4.buster for complete image
       target: base
     volumes:
       - /opt/app/node_modules

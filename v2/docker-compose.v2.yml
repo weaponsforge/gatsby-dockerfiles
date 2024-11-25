@@ -1,6 +1,6 @@
 services:
-  weaponsforge.gatsby-cli-v2:
-    container_name: weaponsforge-gatsby-cli-v2
+  gatsby-cli-v2:
+    container_name: gatsby-cli-v2
     image: weaponsforge/gatsby-cli-v2:latest
     build:
       dockerfile: Dockerfile.v2.buster # Also try Dockerfile.v2.alpine for smaller image

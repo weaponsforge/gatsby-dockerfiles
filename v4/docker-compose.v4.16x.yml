@@ -1,7 +1,7 @@
 services:
-  weaponsforge.gatsby-cli-v4-16x:
-    container_name: weaponsforge-gatsby-cli-v4-16x
-    image: weaponsforge/gatsby-cli-v4-16x:latest
+  gatsby-cli-v4-16x:
+    container_name: gatsby-cli-v4-16x
+    image: weaponsforge/gatsby-cli-v4:v16
     build:
       dockerfile: Dockerfile.v4.buster.16x
       target: base
@@ -9,3 +9,4 @@ services:
       - /opt/app/node_modules
     stdin_open: true
     tty: true
+

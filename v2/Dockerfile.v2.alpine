@@ -1,4 +1,3 @@
-# FROM node:12.22.12-alpine AS base
 FROM node:12-alpine AS base
 
 RUN apk update && apk upgrade -U && \
@@ -6,4 +5,3 @@ RUN apk update && apk upgrade -U && \
   libjpeg-turbo-dev vips-dev pngquant libwebp libwebp-dev libwebp-tools
 
 RUN npm install -g gatsby-cli@2.19.2
-EXPOSE 8000

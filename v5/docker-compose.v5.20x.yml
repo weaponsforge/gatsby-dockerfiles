@@ -1,0 +1,11 @@
+services:
+  gatsby-cli-v5-20x:
+    container_name: gatsby-cli-v5-20x
+    image: weaponsforge/gatsby-cli-v5:v20
+    build:
+      dockerfile: Dockerfile.v5.20x
+      target: base
+    volumes:
+      - /opt/app/node_modules
+    stdin_open: true
+    tty: true

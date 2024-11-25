@@ -1,6 +1,6 @@
 ## gatsby-dockerfiles
 
-A collection of development Dockerfiles for running various [Gatsby CLI](https://www.gatsbyjs.com/docs/reference/gatsby-cli/) versions in containers as an alternative to global installation `"npm install -g gatsby-cli"`.
+A collection of development Dockerfiles for running various [Gatsby CLI](https://www.gatsbyjs.com/docs/reference/gatsby-cli/) versions in containers as an alternative to global installation `"npm install -g gatsby-cli"` on a host machine.
 
 This repository contains references to Gatsby CLI Docker recipes and notes about which Node version(s) are compatible with each CLI version for quick look-ups and inspection of existing Gatsby themes and starters.
 
@@ -20,7 +20,7 @@ Here are some known Gatsby CLI versions and their compatible Node versions.
 1. [Create a new Gatsby app](https://www.gatsbyjs.com/docs/tutorial/getting-started/), or use one of the existing [templates](https://www.builtatlightspeed.com/category/gatsby) or [themes](https://jamstackthemes.dev/theme/#ssg=gatsby).
 
 2. Take note of the app's required Gatsby CLI and Node version, which can be deduced from its `"package.json"`, `"package-lock.json"`, or `"yarn.lock"` files.
-   > **TIP:** Use the recommended Node version in the host machine when using only Node for development. For example, to initialize a new Gatsby app using the **Gatsby CLI v4**, switch to Node 16.14.2 - `"nvm use 16.14.2."`
+   > **TIP:** Use the recommended Node version in the host machine when using **only Node** and the **global Gatsby CLI installation** for development. For example, to initialize a new Gatsby app using the **Gatsby CLI v4**, switch to Node 16.14.2 - `"nvm use 16.14.2."`
 
 3. Use the Dockerfiles inside the **/v2**, **/v3**, **/v4**, or **/v5** directories for reference to build a target Gatsby CLI Docker image.
 
@@ -31,26 +31,26 @@ Here are some known Gatsby CLI versions and their compatible Node versions.
    | /v3 | Dockerfiles and compose files for Gatsby CLI v3 |
    | /v2 | Dockerfiles and compose files for Gatsby CLI v2 |
 
-4. Build the Gatsby CLI image. For example, to build a Gatsby CLI v4 image, navigate first to the **/v4** directory, then run:
+4. Build a Gatsby CLI image. For example, to build the **Gatsby CLI v4** image, navigate first to the **/v4** directory, then run:
    ```bash
-   docker compose -f docker-compose.v4-16x.yml build.
+   docker compose -f docker-compose.v4-16x.yml build
    ```
 
 ## 🚀 Usage
 
 Run the Gatsby CLI in Docker. For example, to run the **Gatsby CLI v4** [API commands](https://www.gatsbyjs.com/docs/reference/gatsby-cli/#api-commands) (using PowerShell):
 
-- Gatsby CLI available scripts:
+- **Gatsby CLI available API commands:**
    ```bash
    docker run -it --rm -v ${pwd}:/app weaponsforge/gatsby-cli-v4 gatsby <API_COMMAND>
    ```
 
-- Run the **`"gatsby develop"`** command (inside a Gatsby app directory):
+- **Run the `"gatsby develop"` command (inside a Gatsby app directory):**
    ```bash
    docker run -it --rm -v ${pwd}:/app -w /app -v /app/node_modules -p 8000:8000 weaponsforge/gatsby-cli-v4-16x sh -c "npm install && gatsby develop -H 0.0.0.0 --verbose"
    ```
 
-- Create a **Docker compose** YML file to run an existing Gatsby app (an alternate option to the previous step):<br>
+- **Create a `Docker compose` YML file to run an existing Gatsby app** (an alternate option to the previous step):<br>
 
    ```yaml
    services:

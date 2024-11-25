@@ -26,10 +26,10 @@ Here are some known Gatsby CLI versions and their compatible Node versions.
 
    | Folder | Contents | Image | Image Tag |
    | :---: | --- | :---: | :---: |
-   | **/v5** | Dockerfiles and compose files for **`Gatsby CLI v5`**<br><sub>docker-compose.v5.20x.yml - CLI for Node 20.x<br>docker-compose.v5.18x.yml - CLI for Node 18.x</sub> | gatsby-cli | v5-node20<br>v5-node18 |
-   | **/v4** | Dockerfiles and compose files for **`Gatsby CLI v4`**<br><sub>docker-compose.v4.18x.yml - CLI for Node 18.x<br>docker-compose.v4.16x.yml - CLI for Node 16.x</sub> | gatsby-cli | v4-node18<br>v4-node16 |
-   | **/v3** | Dockerfiles and compose files for **`Gatsby CLI v3`**<br><sub>docker-compose.v3.14x.yml - CLI for Node 14.x | gatsby-cli | v3-node14 |
-   | **/v2** | Dockerfiles and compose files for **`Gatsby CLI v2`**<br><sub>docker-compose.v2.yml - CLI for Node 12.x | gatsby-cli | v2-node12 |
+   | **/v5** | Dockerfiles and compose files for **`Gatsby CLI v5`**<br><sub>docker-compose.v5.20x.yml - CLI for Node 20.x<br>docker-compose.v5.18x.yml - CLI for Node 18.x</sub> | weaponsforge/gatsby-cli | v5-node20<br>v5-node18 |
+   | **/v4** | Dockerfiles and compose files for **`Gatsby CLI v4`**<br><sub>docker-compose.v4.18x.yml - CLI for Node 18.x<br>docker-compose.v4.16x.yml - CLI for Node 16.x</sub> | weaponsforge/gatsby-cli | v4-node18<br>v4-node16 |
+   | **/v3** | Dockerfiles and compose files for **`Gatsby CLI v3`**<br><sub>docker-compose.v3.14x.yml - CLI for Node 14.x | weaponsforge/gatsby-cli | v3-node14 |
+   | **/v2** | Dockerfiles and compose files for **`Gatsby CLI v2`**<br><sub>docker-compose.v2.yml - CLI for Node 12.x | weaponsforge/gatsby-cli | v2-node12 |
 
 4. Build a Gatsby CLI image. For example, to build the **Gatsby CLI v4** image, navigate first to the **/v4** directory, then run:
    ```bash
@@ -42,12 +42,12 @@ Run the Gatsby CLI in Docker. For example, to run the **Gatsby CLI v4** [API com
 
 - **Gatsby CLI available API commands:**
    ```bash
-   docker run -it --rm -v ${pwd}:/app weaponsforge/gatsby-cli-v4 gatsby <API_COMMAND>
+   docker run -it --rm -v ${pwd}:/app weaponsforge/gatsby-cli:v4-node16 gatsby <API_COMMAND>
    ```
 
 - **Run the `"gatsby develop"` command (inside a Gatsby app directory):**
    ```bash
-   docker run -it --rm -v ${pwd}:/app -w /app -v /app/node_modules -p 8000:8000 weaponsforge/gatsby-cli-v4-16x sh -c "npm install && gatsby develop -H 0.0.0.0 --verbose"
+   docker run -it --rm -v ${pwd}:/app -w /app -v /app/node_modules -p 8000:8000 weaponsforge/gatsby-cli:v4-node16 sh -c "npm install && gatsby develop -H 0.0.0.0 --verbose"
    ```
 
 - **Create a `Docker compose` YML file to run an existing Gatsby app** (an alternate option to the previous step):<br>
@@ -55,7 +55,7 @@ Run the Gatsby CLI in Docker. For example, to run the **Gatsby CLI v4** [API com
    ```yaml
    services:
      gatsby-app:
-       image: weaponsforge/gatsby-cli-v4-16x
+       image: weaponsforge/gatsby-cli:v4-node16
        working_dir: /app
        volumes:
          - .:/app

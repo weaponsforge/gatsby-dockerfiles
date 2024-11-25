@@ -1,0 +1,11 @@
+services:
+  weaponsforge.gatsby-cli-v3:
+    container_name: weaponsforge-gatsby-cli-v3
+    image: weaponsforge/gatsby-cli-v3:latest
+    build:
+      dockerfile: Dockerfile.v3
+      target: base
+    volumes:
+      - /opt/app/node_modules
+    stdin_open: true
+    tty: true

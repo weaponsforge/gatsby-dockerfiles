@@ -1,0 +1,9 @@
+node_modules/
+.git
+.vscode
+*.zip
+*.rar
+*.tgz
+*.txt
+*.json
+*.env

@@ -1,0 +1,9 @@
+# FROM node:12.22.12-alpine AS base
+FROM node:12-alpine AS base
+
+RUN apk update && apk upgrade -U && \
+  apk add ca-certificates gcc g++ make python3 git musl-dev build-base libpng-dev \
+  libjpeg-turbo-dev vips-dev pngquant libwebp libwebp-dev libwebp-tools
+
+RUN npm install -g gatsby-cli@2.19.2
+EXPOSE 8000

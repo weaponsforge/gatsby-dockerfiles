@@ -1,0 +1,11 @@
+services:
+  weaponsforge.gatsby-cli-v2:
+    container_name: weaponsforge-gatsby-cli-v2
+    image: weaponsforge/gatsby-cli-v2:latest
+    build:
+      dockerfile: Dockerfile.v2.buster # Also try Dockerfile.v2.alpine for smaller image
+      target: base
+    volumes:
+      - /opt/app/node_modules
+    stdin_open: true
+    tty: true

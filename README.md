@@ -42,12 +42,17 @@ Run the Gatsby CLI in Docker. For example, to run the **Gatsby CLI v4** [API com
 
 - **Gatsby CLI available API commands:**
    ```bash
-   docker run -it --rm -v ${pwd}:/app weaponsforge/gatsby-cli:v4-node16 gatsby <API_COMMAND>
+   docker run -it --rm -v ${pwd}:/app weaponsforge/gatsby-cli:v4-node18 gatsby <API_COMMAND>
+   ```
+
+- **Create a new Gatsby app using the `"gatsby new"` command**:
+   ```bash
+   docker run -it --rm -v ${pwd}:/app -w /app weaponsforge/gatsby-cli:v4-node18 gatsby new
    ```
 
 - **Run the `"gatsby develop"` command (inside a Gatsby app directory):**
    ```bash
-   docker run -it --rm -v ${pwd}:/app -w /app -v /app/node_modules -p 8000:8000 weaponsforge/gatsby-cli:v4-node16 sh -c "npm install && gatsby develop -H 0.0.0.0 --verbose"
+   docker run -it --rm -v ${pwd}:/app -w /app -v /app/node_modules -p 8000:8000 weaponsforge/gatsby-cli:v4-node18 sh -c "npm install && gatsby develop -H 0.0.0.0 --verbose"
    ```
 
 - **Create a `Docker compose` YML file to run an existing Gatsby app** (an alternate option to the previous step):<br>
